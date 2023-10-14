@@ -12,13 +12,6 @@ public class HelloWorldController {
 
     @GetMapping("{name}")
     public ResponseEntity<String> hello(@PathVariable("name") String name) {
-        var message = "";
-        if (name.equals("admin")) {
-            message = "Welcome Mr. " + name;
-        } else {
-            message = "Welcome User " + name;
-        }
-
-        return ResponseEntity.ok(message);
+        return ResponseEntity.ok("Hello " + name);
     }
 }
