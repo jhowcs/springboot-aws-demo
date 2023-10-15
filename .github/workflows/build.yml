@@ -1,5 +1,5 @@
 # Workflow name
-name: Deploy spring code to aws elastic beanstalk
+name: Deploy SpringBoot app to AWS Elastic Beanstalk
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: artifact
-          path: build/libs/springbootdemo-0.0.6-SNAPSHOT.jar
+          path: build/libs/springboot-fruits-0.0.1-SNAPSHOT.jar
 
   deploy:
     needs: build
@@ -43,8 +43,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: springboot-demo
-          environment_name: springboot-demo-env-dev
+          application_name: springboot-fruits
+          environment_name: Springboot-fruits-env
           version_label: ${{ github.SHA }}
           region: us-east-1
-          deployment_package: springbootdemo-0.0.6-SNAPSHOT.jar
+          deployment_package: springboot-fruits-0.0.1-SNAPSHOT.jar
