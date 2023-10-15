@@ -19,7 +19,7 @@ public class HelloWorldController {
 
     @GetMapping("fruits")
     public ResponseEntity<List<String>> fruits() {
-        var fruits = List.of("banana, apple, pineapple, peach, raspberry, blueberry");
+        var fruits = List.of("banana, apple, pineapple, peach, raspberry, blueberry, orange");
         return ResponseEntity.ok(fruits);
     }
 }
